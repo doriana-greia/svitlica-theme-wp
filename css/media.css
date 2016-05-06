@@ -1,0 +1,207 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+.news .news-slider .news-text{
+	padding-left: 20px;
+}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+.services .services-tiz-wrap .services-tiz{
+	max-height: 310px;
+	min-height: 310px;
+}
+
+.news .news-slider .owl-dots{
+	bottom: 280px;
+}
+
+.tizer{
+width: 80%;
+}
+.contact{
+	height: auto;
+}
+.contact .address{
+	float: none;
+	width: 100%;
+	padding-left: 40px;
+}
+.contact .map{
+	float: none;
+	width: 100%;
+
+}
+}
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+.services .services-tiz-wrap .services-tiz{
+	min-height: 220px;
+}
+
+	.news .news-slider .owl-dots{
+	bottom: 300px;
+}
+	
+.call-back .call-back-content form input[type="text"]{
+	margin-bottom: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+.call-back .call-back-content form .input-grup{
+	display: block;
+		margin: 0 auto;
+}
+
+.tizer{
+		width: 96%;
+	}
+	
+	.tizer .tizer-titel h1{
+		line-height: 34px;
+		font-size: 27px;
+	}
+
+	.tizer .tizer-titel{
+		margin-top: 13%
+	}
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+.btn-red{
+	width: 230px;
+	font-size: 21px;
+}
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto{
+	bottom: 340px;
+}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+
+		/* Menu  header */
+.toggle-button {
+	display: none;
+}
+
+.main-menu {
+	display: block;
+	margin: 0 auto;
+}
+
+.main-menu li{
+		/* теги <li> расположены в ряд */
+	width: calc(65% / 5);
+	float: right;
+	text-align: center;
+	display: inline-block;
+	margin-right: -4px;
+}
+
+.main-menu a {
+	font-family: "ProfontsBureau", Arial;
+	display: inline-block;
+	margin-right: -4px;
+	text-decoration: none;
+	color: #303030;
+	font-size: 15px;
+	border-bottom: 0;	
+}
+.toggle-button:after 	{
+	content: "\e804";
+	cursor: pointer;
+	padding: 15px;
+	font-size: 1.5em;
+	text-align: center;
+}
+#menu-checkbox:checked + .main-menu .toggle-button:after {
+	content: "\e804";
+}
+
+footer .toggle-button-footer {
+	display: none;
+}
+
+footer .main-menu-footer {
+	display: block;
+	margin: 0 auto;
+}
+		/* Menu  bottum */
+footer .main-menu-footer li{
+	width: calc(75% / 5);
+	float: right;
+	text-align: center;
+	display: inline-block;
+	margin-right: -4px;
+}
+
+
+footer .main-menu-footer a {
+	font-family: "ProfontsBureau", Arial;
+	display: inline-block;
+	margin-right: -4px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 15px;
+	border-bottom: 0;	
+}
+footer .toggle-button-footer:after 	{
+	cursor: pointer;
+	padding: 15px;
+	font-size: 1.5em;
+	text-align: center;
+}
+footer #menu-checkbox-footer:checked+ .main-menu .toggle-button-footer:after {
+	content: "\e804";
+}
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
+@media only screen and (max-width : 600px) {
+
+
+}
+
+@media only(min-height: 780px) and (min-width : 1400px){
+
+}
