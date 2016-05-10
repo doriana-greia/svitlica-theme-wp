@@ -73,9 +73,7 @@ get_header();
         <div class="container-fluid wraper">
             <div class="row">
                 <div class="breadcrumbs">
-                    <a href="#">Головна</a>
-                    <div class="arow">></div>
-                    <a href="#">Події</a>
+                    <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs('>'); ?>
                 </div>
             </div><!-- /.row -->
         </div>
@@ -85,24 +83,24 @@ get_header();
 
                     <div class="col-md-6">
                         <h2>Напишіть нам</h2>
-                        <form class="contact-form" action="">
-                            <textarea>ваш коментар або ваші побажання</textarea>
-                            <input type="text"  placeholder="e-mail"name="e-mail" required/>
-                            <input type="text" placeholder="телефон" name="phone" required/>
-                            <input class="btn-red-light" type="submit" value
-                            ="Надіслати">
 
-                        </form>
+                            <form class="contact-form" method="post" id="contact-form" action="<?php the_permalink();?>" onsubmit="">
+                                <textarea name="contact[message]"  placeholder="Ваш коментар або ваші побажання"id="contact-form-message" required="required"><?php echo isset($_POST['contact']['message']) ? $_POST['contact']['message'] : ''?></textarea>
+                                <input name="contact[email]" type="email" placeholder="Email" value="<?php echo isset($_POST['contact']['email']) ? $_POST['contact']['email'] : ''?>" required="required" id="contact-form-email" />
+                                <input name="contact[phone]" type="text" placeholder="Телефон" value="<?php echo isset($_POST['contact']['phone']) ? $_POST['contact']['phone'] : ''?>" id="contact-form-phone" />
+                                <input type="submit" class="submit btn-red-light" value="Надіслати"/>
+
+                                <?php wp_nonce_field() ?>
+                            </form>
+
                     </div>
                     <div class="col-md-6">
                         <div class="contact-inform">
                             <h2>наші контакти</h2>
-                            <p>Реколекційно-Відпочинковий центр
-                                79491 Україна
-                                м. Львів-Брюховичі,<br>  вул. Широка, 4
-                                тел.: (380-32) 244-81-02
-                                тел./факс: (380-32) 244-81-09
-                                e-mail: info@svitlycia.org.ua</p>
+                            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
+                            <?php endwhile; endif; ?>
+
                         </div>
                     </div>
                 </div><!-- /.row -->

@@ -766,25 +766,14 @@ function aletheme_metaboxes($meta_boxes) {
 function aletheme_get_images_sizes() {
 	return array(
 
-        'gallery' => array(
+        'services' => array(
             array(
-                'name'      => 'gallery-thumba',
-                'width'     => 430,
-                'height'    => 267,
+                'name'      => 'services-mini',
+                'width'     => 299,
+                'height'    => 290,
                 'crop'      => true,
             ),
-            array(
-                'name'      => 'gallery-mini',
-                'width'     => 100,
-                'height'    => 67,
-                'crop'      => true,
-            ),
-            array(
-                'name'      => 'gallery-big',
-                'width'     => 680,
-                'height'    => 9999,
-                'crop'      => false,
-            ),
+
         ),
         'post' => array(
             array(
@@ -823,8 +812,47 @@ function aletheme_get_post_types() {
                 'first_image',
             )
         ),
+        'services' => array(
+            'config' => array(
+                'public' => true,
+                'menu_position' => 20,
+                'has_archive'   => true,
+                'supports'=> array(
+                    'title',
+                    'editor',
+                    'thumbnail',
+                ),
+                'show_in_nav_menus'=> true,
+            ),
+            'singular' => 'Послуга',
+            'multiple' => 'Послуги',
+            'columns'    => array(
+                'first_image',
+            )
+        ),
+        'rooms' => array(
+            'config' => array(
+                'public' => true,
+                'menu_position' => 20,
+                'has_archive'   => true,
+                'supports'=> array(
+                    'title',
+                    'editor',
+                    'thumbnail',
+                ),
+                'show_in_nav_menus'=> true,
+            ),
+            'singular' => 'Кімната',
+            'multiple' => 'Кімнати',
+            'columns'    => array(
+                'first_image',
+            )
+        ),
+
     );
 }
+
+
 
 /**
  * Add taxonomies that are used in theme

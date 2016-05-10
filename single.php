@@ -1,5 +1,6 @@
 <?php get_header(); ?>
     <!-- Content -->
+<?php /*?>
     <div class="blog-center-align">
 
     <!-- Blog Caption -->
@@ -48,4 +49,75 @@
     </div>
 
     </div>
+ <?php */?>
+
+
+    <div class="main">
+        <div class="container-fluid wraper">
+            <div class="row">
+                <div class="breadcrumbs">
+                    <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs('>'); ?>
+                </div>
+            </div><!-- /.row -->
+        </div>
+        <section class="main-ewents-info">
+            <div class="container-fluid wraper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3><?php the_title(); ?></h3>
+
+                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+
+                                <?php ale_part('postfull');?>
+
+
+
+                        <?php endwhile; else: ?>
+                            <?php ale_part('notfound')?>
+                        <?php endif; ?>
+                    </div>
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <a href="#" class="btn-green">Розклад Програми</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <a href="#" class="btn-red-light">Реєструватись</a>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="data-ewents-content">
+                            <p class="">Сб, 22 Грудня</p>
+                            <p class="">11:30 - 16:00</p>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="ewents-info-box">
+                            <div class="ewents-info-img">
+                                <img src="img/service- info/service-info-1.jpg" alt="service-info-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="ewents-info-box">
+                            <div class="ewents-info-img">
+                                <img src="img/service- info/service-info-2.jpg" alt="service-info-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="ewents-info-box">
+                            <div class="ewents-info-img">
+                                <img src="img/service- info/service-info-4.jpg" alt="service-info-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div><!-- /.main -->
+
+
 <?php get_footer(); ?>

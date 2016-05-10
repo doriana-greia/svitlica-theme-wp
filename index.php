@@ -124,13 +124,9 @@
     <div class="main">
         <div class="container-fluid wraper">
             <div class="row">
-                <!--<div class="breadcrumbs">
-                    <a href="#">Головна</a>
-                    <div class="arow">></div>
-                    <a href="#">Події</a>
-                </div>-->
-                <?php echo get_breadcrumbs(); ?>
-
+                <div class="breadcrumbs">
+                    <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs('>'); ?>
+                </div>
             </div><!-- /.row -->
         </div>
         <section class="main-ewents">

@@ -25,3 +25,16 @@ if ( is_readable($locale_file) )
  * If you want to add custom functions you should do manual
  * updates only.
  ****************************************************************/
+
+
+
+add_action("admin_init", "my_fields", 1);
+function my_fields() {
+    add_meta_box( "extra_fields", "Додаткове поле", "fields_box", "My_type_post", "normal", "high" );
+}
+
+function fields_box(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $price = $custom["price"][0];
+}

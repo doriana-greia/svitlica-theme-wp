@@ -105,9 +105,6 @@ function ale_contact_email_send($data) {
 
 			Phone: {$data['phone']}
 
-			How did you find me: {$data['how']}
-
-
 			Message:
 
 			{$data['message']}
