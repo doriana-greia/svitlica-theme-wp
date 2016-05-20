@@ -102,20 +102,26 @@ function aletheme_get_options() {
 
 
 
-    $options[] = array("name" => "Header Slider",
+    $options[] = array("name" => "Post Slider",
                         "type" => "heading");
 
     $options[] = array( "name" => "Blog Slider slug 1",
-                        "desc" => "Введіть текст 1го слайду.",
-                        "id" => "ale_1_slide",
+                        "desc" => "Загрузіть зображення.",
+                        "id" => "ale_1_img",
                         "std" => "",
-                        "type" => "text");
+                        "type" => "upload");
 
     $options[] = array( "name" => "Blog Slider time 1",
-                        "desc" => "Введіть час 1ої події.",
-                        "id" => "ale_1_time",
+                        "desc" => "Загрузіть зображення.",
+                        "id" => "ale_2_img",
                         "std" => "",
-                        "type" => "text");
+                        "type" => "upload");
+
+    $options[] = array( "name" => "Blog Slider time 1",
+                        "desc" => "Загрузіть зображення.",
+                        "id" => "ale_3_img",
+                        "std" => "",
+                        "type" => "upload");
 
     $options[] = array( "name" => "Typography",
                         "type" => "heading");
@@ -803,6 +809,7 @@ function aletheme_get_post_types() {
                     'title',
                     'editor',
                     'thumbnail',
+
                 ),
                 'show_in_nav_menus'=> true,
             ),
@@ -821,6 +828,7 @@ function aletheme_get_post_types() {
                     'title',
                     'editor',
                     'thumbnail',
+                    'custom-fields',
                 ),
                 'show_in_nav_menus'=> true,
             ),
@@ -839,6 +847,7 @@ function aletheme_get_post_types() {
                     'title',
                     'editor',
                     'thumbnail',
+                    'custom-fields',
                 ),
                 'show_in_nav_menus'=> true,
             ),
@@ -851,7 +860,6 @@ function aletheme_get_post_types() {
 
     );
 }
-
 
 
 /**

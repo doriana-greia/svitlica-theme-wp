@@ -73,7 +73,7 @@ get_header();
         <div class="container-fluid wraper">
             <div class="row">
                 <div class="breadcrumbs">
-                    <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs('>'); ?>
+                    <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
                 </div>
             </div><!-- /.row -->
         </div>

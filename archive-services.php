@@ -4,7 +4,7 @@
         <div class="container-fluid wraper">
             <div class="row">
                 <div class="breadcrumbs">
-                    <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs('>'); ?>
+                    <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
                 </div>
             </div><!-- /.row -->
         </div>
@@ -32,12 +32,12 @@
                             <div class="col-md-8">
                                 <div class="services-description">
                                     <h4><?php echo the_title(); ?></h4>
-                                    <p>
+
                                         <?php echo wp_trim_words( get_the_content(), 30 ); ?>
-                                    </p>
+
                                 </div><!-- /.ewents-description -->
                                 <div class="btn_grup">
-                                    <a href="#" class="btn-red-light">
+                                    <a href="#services_f" class="btn-red-light popap_c">
                                         Замовити
                                     </a><!-- /.btn-red-light -->
 
@@ -55,6 +55,52 @@
         </section>
     </div><!-- /.main -->
 
+    <div class="hidden">
+        <div class="services_f" id = "services_f" >
+            <form  action="mail.php" >
 
+                <label>
+                    <span>Тип Послуги</span>
+                    <select name="rooms" id="">
+                        <option>Святкування урочистостей</option>
+                        <option>Конференц-зал</option>
+                        <option>Кейтерінг</option>
+                        <option>Відпочинок</option>
+                        <option>Виїздні фуршети</option>
+                    </select>
+
+                </label>
+                <label >
+                    <span>Дата</span>
+                    <input type="text" placeholder="03,10,15" name="phone" required/>
+                </label>
+
+                <label >
+                    <span>Кількість гостей</span>
+                    <input type="text" placeholder="50 дорослих" name="adults" required/>
+                </label>
+                <label >
+                    <span>П.І.П</span>
+                    <input type="text" placeholder="Байда Андрій Тарасович" name="last_name" required/>
+                </label>
+
+                <label >
+                    <span>Телефон</span>
+                    <input type="text" placeholder="+38 (093) 00 00 0000" name="phone" required/>
+                </label>
+                <label >
+                    <span>E-MAIL</span>
+                    <input type="text" placeholder="youremail@mail.com" name="email" required/>
+                </label>
+                <label >
+                    <span class="textarea_c">Коментар</span>
+                    <textarea placeholder="Ваш Коментар" name="comment"></textarea>
+                </label>
+                <div class=" reqert_s">
+                    <input class="btn-red-light" type="submit" value="Бронювати">
+                </div>
+            </form>
+        </div>
+    </div>
 
 <?php get_footer(); ?>

@@ -1,4 +1,5 @@
-$(function() {
+$(document).ready(function() {
+
 
 	$(".slider-news").owlCarousel({
 		responsive:{
@@ -14,6 +15,30 @@ $(function() {
 								items:1,
 								nav:true
 				}
+
+		},
+		navText : ""
+	});
+
+
+
+			$(".rooms-img").owlCarousel({
+		responsive:{
+			0:{
+				items:1,
+				nav:true
+			}
+
+		},
+		navText : ""
+	});
+
+			$(".services-img").owlCarousel({
+		responsive:{
+			0:{
+				items:1,
+				nav:true
+			}
 
 		},
 		navText : ""
@@ -81,6 +106,10 @@ $(function() {
                 navText : ""
             });
 
+
+
+
+$(".popap_c").magnificPopup();
 
 	//SVG Fallback
 	if(!Modernizr.svg) {

@@ -15,69 +15,10 @@
     <script>!function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n}function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);</script
 
 </head>
-<body <?php if(is_page_template('page-home.php')){ body_class('home'); } if(is_page_template('template-contact.php')){ body_class('contact-page'); } if(is_page_template('template-about.php')){ body_class('about-page'); } if(is_post_type_archive('rooms')){ body_class('rooms-page'); } if(is_post_type_archive('services')){body_class('services_page'); } if(is_blog()){ body_class('events'); } else { body_class(); } ?> >
-
-
-    <?php /* ?>
-    <!-- Header -->
-    <nav class="main-menu">
-        <div class="menu-align">
-            <!-- Main Menu Left -->
-            <?php
-            if ( has_nav_menu( 'header_left_menu' ) ) {
-                wp_nav_menu(array(
-                    'theme_location'=> 'header_left_menu',
-                    'menu'			=> 'Header Left Menu',
-                    'menu_class'	=> 'menu menu-left cf',
-                    'walker'		=> new Aletheme_Nav_Walker(),
-                    'container'		=> '',
-                ));
-            }
-            ?>
-
-            <!-- Logo -->
-            <ul class="logo">
-                <?php if(ale_get_option('sitelogo')){ ?>
-                    <a href="<?php echo home_url(); ?>/" class="customlogo"><img src="<?php echo ale_get_option('sitelogo'); ?>" /></a>
-                <?php } else { ?>
-                    <a href="<?php echo home_url(); ?>/" class="alelogo"><?php echo bloginfo('name'); ?></a>
-                <?php } ?>
-            </ul>
+<body <?php if(is_page_template('page-home.php')){ body_class('home'); } if(is_page_template('template-contact.php')){ body_class('contact-page'); } if(is_page_template('template-about.php')){ body_class('about-page'); } if(is_post_type_archive('rooms')){ body_class('rooms-page'); } if(is_post_type_archive('services')){body_class('services_page'); } if(is_post_type_archive('single-services')){ body_class('services-info-page'); } if(is_blog()){ body_class('events'); } else { body_class(); } ?> >
 
 
 
-            <!-- Main Menu Right -->
-            <?php
-            if ( has_nav_menu( 'header_right_menu' ) ) {
-                wp_nav_menu(array(
-                    'theme_location'=> 'header_right_menu',
-                    'menu'			=> 'Header Right Menu',
-                    'menu_class'	=> 'menu menu-right cf',
-                    'walker'		=> new Aletheme_Nav_Walker(),
-                    'container'		=> '',
-                ));
-            }
-            ?>
-
-            <!-- DropDown -->
-            <div class="menu-click-drop">
-                <a><?php _e('MENU','aletheme'); ?></a>
-
-                <?php
-                if ( has_nav_menu( 'mobile_menu' ) ) {
-                    wp_nav_menu(array(
-                        'theme_location'=> 'mobile_menu',
-                        'menu'			=> 'Mobile Menu',
-                        'menu_class'	=> 'dropdown-menu cf',
-                        'walker'		=> new Aletheme_Nav_Walker(),
-                        'container'		=> '',
-                    ));
-                }
-                ?>
-            </div>
-        </div>
-    </nav>
-    <?php */ ?>
 
 
     <header>
@@ -149,66 +90,38 @@
                     <div class="news-slider-item">
                         <h2>Наші Події</h2>
                         <ul class="slider-news">
+                            <?php
+                            $type = 'post';
+                            global $post;
+                            $args = array( 'posts_per_page' => 4,'offset' => 0,  'post_type'=> $type, );
+                            $myposts = get_posts( $args );
+                            foreach( $myposts as $post ){ setup_postdata($post);
+                            ?>
                             <li>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="date">
                                             <div class="day">
-                                                Субоtта, 10 Січня
+                                                <?php echo get_post_meta($post->ID, 'data', true) ;?>
                                             </div>
                                             <div class="time">
-                                                <?php echo ale_get_option('1_time')?>
+                                                <?php echo get_post_meta($post->ID, 'time', true) ;?>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="news-text">
-                                            <p><?php echo ale_get_option('1_slide')?></p>
+                                            <p><?php echo wp_trim_words( get_the_content(), 13 ); ?></p>
                                         </div>
                                     </div>
                                 </div><!-- ./row -->
-                                <a class="btn-white" href="#">дізнатись більше</a>
+                                <a class="btn-white" href="<?php the_permalink(); ?>">дізнатись більше</a>
                             </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="date">
-                                            <div class="day">
-                                                Субоtта, 10 Січня
-                                            </div>
-                                            <div class="time">
-                                                11:30 - 16:00
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="news-text">
-                                            <p>Відкриття повністю нового сайту Реколекційно-Відпочинковому Центрі Львівської Архиєпархії Української Греко-Католицької Церкви</p>
-                                        </div>
-                                    </div>
-                                </div><!-- ./row -->
-                                <a class="btn-white" href="#">дізнатись більше</a>
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="date">
-                                            <div class="day">
-                                                Субоtта, 10 Січня
-                                            </div>
-                                            <div class="time">
-                                                11:30 - 16:00
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="news-text">
-                                            <p>Відкриття повністю нового сайту Реколекційно-Відпочинковому Центрі Львівської Архиєпархії Української Греко-Католицької Церкви</p>
-                                        </div>
-                                    </div>
-                                </div><!-- ./row -->
-                                <a class="btn-white" href="#">дізнатись більше</a>
-                            </li>
+                            <?php
+                            }
+                            wp_reset_postdata();
+                            ?>
+
                         </ul><!-- /.slider-news -->
                     </div><!-- /.news-slider-item -->
                 </div><!-- ./news-slider -->

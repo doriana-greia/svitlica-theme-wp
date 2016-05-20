@@ -43,8 +43,10 @@ function ale_enqueue_styles() {
 
     wp_register_style( 'aletheme_general_css', THEME_URL . '/css/general.css', array(), ALETHEME_THEME_VERSION, 'all');
     wp_register_style( 'aletheme_owl_carousel', THEME_URL . '/js/libs/owl/assets/owl.carousel.css', array(), ALETHEME_THEME_VERSION, 'all');
+    wp_register_style( 'aletheme_magnific-popup', THEME_URL . '/js/libs/magnific/magnific-popup.css', array(), ALETHEME_THEME_VERSION, 'all');
     wp_enqueue_style('aletheme_general_css');
     wp_enqueue_style('aletheme_owl_carousel');
+    wp_enqueue_style('aletheme_magnific-popup');
 
 
 }

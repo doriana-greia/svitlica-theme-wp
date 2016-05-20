@@ -1,10 +1,10 @@
-<?php get_header(); ?>
+ <?php get_header(); ?>
 
     <!-- Content -->
     <div class="portfolio-single-center-align">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="portfolio-single-title">
-        <h2><?php the_title(); ?></h2>
+        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <p><?php _e('by','aletheme'); ?> <a href=""><?php echo the_author_posts_link(); ?></a> <?php _e('on','aletheme'); ?> <?php echo get_the_date(); ?></p>
         <a href="<?php echo home_url();?>/gallery" class="back"><?php _e('&lt; back to the gallery','aletheme'); ?></a>
     </div>
