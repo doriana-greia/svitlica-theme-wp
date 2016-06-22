@@ -15,45 +15,19 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <div class="rooms-box-wrap ">
                         <div class="rooms-box">
-                            <ul class="rooms-img">
-                                <li>
-                                    <?php $image = get_post_meta($post->ID, 'rooms_img_1', true); ?>
-                                    <?php if($image !== '') { ?>
-                                        <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/rooms/<?php echo $image ?>" />
-                                    <?php }
-                                    else { ?>
-                                        <img src="http://placehold.it/299x291<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                    <?php } ?>
-                                </li>
-                                <li>
-                                    <?php $image = get_post_meta($post->ID, 'rooms_img_2', true); ?>
-                                    <?php if($image !== '') { ?>
-                                        <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/rooms/<?php echo $image ?>" />
-                                    <?php }
-                                    else { ?>
-                                        <img src="http://placehold.it/299x291<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                    <?php } ?>
-                                </li>
-                                <li> <?php $image = get_post_meta($post->ID, 'rooms_img_3', true); ?>
-                                    <?php if($image !== '') { ?>
-                                        <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/rooms/<?php echo $image ?>" />
-                                    <?php }
-                                    else { ?>
-                                        <img src="http://placehold.it/299x291<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                    <?php } ?>
-                                </li>
-                                <li> <?php $image = get_post_meta($post->ID, 'rooms_img_4', true); ?>
-                                    <?php if($image !== '') { ?>
-                                        <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/rooms/<?php echo $image ?>" />
-                                    <?php }
-                                    else { ?>
-                                        <img src="http://placehold.it/299x291<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                    <?php } ?>
-                                </li>
-                            </ul>
+
+                                <div class="rooms-img">
+                                    <?php
+                                    if (get_post_meta($post->ID, 'gallery', true)) {
+                                        $shortcode = get_post_meta($post->ID, 'gallery', true);
+                                        echo do_shortcode("$shortcode");
+                                    } else { echo ''; }
+                                    ?>
+                                </div>
+
                             <div class="rooms-description">
                                 <h4><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h4>
-                                <p><?php echo wp_trim_words( get_the_content(), 15 ); ?></p>
+                                <p><?php echo wp_trim_words( get_the_content(), 14 ); ?></p>
                                 <div class="free-room">
                                     <p>Залишилось вільних номерів: <span><?php echo get_post_meta($post->ID, 'rooms_number', true); ?></span> номери</p>
                                     <ul>

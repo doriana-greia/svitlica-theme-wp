@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    $(".ngg-clear").detach()
 
 	$(".slider-news").owlCarousel({
 		responsive:{
@@ -22,27 +23,28 @@ $(document).ready(function() {
 
 
 
-			$(".rooms-img").owlCarousel({
+			$(".ngg-galleryoverview").owlCarousel({
 		responsive:{
 			0:{
 				items:1,
-				nav:true
-			}
+			},
+			720:{
+				items:1,
+				},
+			800:{
+					items:1,
+					nav:true
+				},
+			1200:{
+					items:1,
+					nav:true
+				}
 
 		},
 		navText : ""
 	});
 
-			$(".services-img").owlCarousel({
-		responsive:{
-			0:{
-				items:1,
-				nav:true
-			}
 
-		},
-		navText : ""
-	});
 
 	$(".carousel").owlCarousel({
 		responsive:{
@@ -106,7 +108,11 @@ $(document).ready(function() {
                 navText : ""
             });
 
-
+    var clear = document.getElementsByClassName("ngg-clear");
+    for ( i = 0; i < clear.length; i++) {
+        clear[i].onmouseover = function() {
+            this.remove();}
+    };
 
 
 $(".popap_c").magnificPopup();

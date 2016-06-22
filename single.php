@@ -47,7 +47,7 @@
 
                                 <?php $image = get_post_meta($post->ID, 'ewent_img_1', true); ?>
                                 <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/uploads/2016/service-info/<?php echo $image ?>" />
+                                    <img src="http://localhost/svitlica/wp-content/gallery/events/<?php echo $image ?>" />
                                 <?php }
                                 else { ?>
                                     <img src="http://placehold.it/299x291<?php echo $image ?>" alt="Изображение отсутствует"/>
@@ -59,7 +59,7 @@
                     <div class="col-md-4 col-sm-4">
                         <div class="ewents-info-box">
                             <div class="ewents-info-img">
-                                <img src="http://localhost/svitlica/wp-content/uploads/2016/service-info/<?php echo get_post_meta($post->ID, "ewent_img_2", true); ?>" />
+                                <img src="http://localhost/svitlica/wp-content/gallery/events/<?php echo get_post_meta($post->ID, "ewent_img_2", true); ?>" />
 
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                     <div class="col-md-4 col-sm-4">
                         <div class="ewents-info-box">
                             <div class="ewents-info-img">
-                                <img src="http://localhost/svitlica/wp-content/uploads/2016/service-info/<?php echo get_post_meta($post->ID, "ewent_img_3", $single = true); ?>" />
+                                <img src="http://localhost/svitlica/wp-content/gallery/events/<?php echo get_post_meta($post->ID, "ewent_img_3", $single = true); ?>" />
                             </div>
                         </div>
                     </div>

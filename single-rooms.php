@@ -58,7 +58,7 @@
 
                 <label>
                     <span>Тип кімнати</span>
-                    <select name="rooms" id="">
+                    <select name="rooms" >
                         <option>Одномісний</option>
                         <option>Двомісний</option>
                         <option>Тримісний</option>

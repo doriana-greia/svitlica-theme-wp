@@ -151,62 +151,60 @@ get_header();
                 <div class="reviews-slider carousel">
                     <div class="visitors">
                         <div class="visitors-photo">
-                            <img src="img/visitors-photo-1.png" alt="visitors-photo">
+                            <img src="<?php echo ale_get_option('1_comment_img')?>" alt="visitors-photo">
                         </div>
                         <div class="visitors-name">
-                            <p>Дмитро порох</p>
-                            <span>Черкаси</span>
+                            <p><?php echo ale_get_option('1_name')?></p>
+                            <span><?php echo ale_get_option('1_city')?></span>
                         </div>
                         <div class="visitors-comment">
                             <p>
-                                One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+                                <?php echo ale_get_option('1_comment')?>
                             </p>
                         </div>
                     </div><!-- /.visitors -->
                     <div class="visitors">
                         <div class="visitors-photo">
-                            <img src="img/visitors-photo-2.png" alt="visitors-photo">
+                            <img src="<?php echo ale_get_option('2_comment_img')?>" alt="visitors-photo">
 
                         </div>
                         <div class="visitors-name">
-                            <p>Дмитро порох</p>
-                            <span>Київ</span>
+                            <p><?php echo ale_get_option('2_name')?></p>
+                            <span><?php echo ale_get_option('2_city')?></span>
                         </div>
                         <div class="visitors-comment">
                             <p>
-
-                                One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+                                <?php echo ale_get_option('2_comment')?>
                             </p>
                         </div>
                     </div><!-- /.visitors -->
                     <div class="visitors">
                         <div class="visitors-photo">
-                            <img src="img/visitors-photo-1.png" alt="visitors-photo">
+                            <img src="<?php echo ale_get_option('3_comment_img')?>" alt="visitors-photo">
+
                         </div>
                         <div class="visitors-name">
-                            <p>Дмитро порох</p>
-                            <span>Черкаси</span>
+                            <p><?php echo ale_get_option('3_name')?></p>
+                            <span><?php echo ale_get_option('3_city')?></span>
                         </div>
                         <div class="visitors-comment">
                             <p>
-
-                                One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+                                <?php echo ale_get_option('3_comment')?>
                             </p>
                         </div>
                     </div><!-- /.visitors -->
                     <div class="visitors">
                         <div class="visitors-photo">
-                            <img src="img/visitors-photo-2.png" alt="visitors-photo">
+                            <img src="<?php echo ale_get_option('4_comment_img')?>" alt="visitors-photo">
 
                         </div>
                         <div class="visitors-name">
-                            <p>Дмитро порох</p>
-                            <span>Київ</span>
+                            <p><?php echo ale_get_option('4_name')?></p>
+                            <span><?php echo ale_get_option('4_city')?></span>
                         </div>
                         <div class="visitors-comment">
                             <p>
-
-                                One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+                                <?php echo ale_get_option('4_comment')?>
                             </p>
                         </div>
                     </div><!-- /.visitors -->
@@ -270,32 +268,32 @@ get_header();
             <div class="chapel-slaider">
                 <div class="chapel-item">
                     <div class="chapel-img">
-                        <img src="<?php echo ale_get_option('1_img')?>" alt="chapel-img">
+                        <img src="<?php echo ale_get_option('1_chapel_img')?>" alt="chapel-img">
                     </div>
                 </div><!-- /.chapel-item -->
                 <div class="chapel-item">
                     <div class="chapel-img">
-                        <img src="<?php echo ale_get_option('2_img')?>" alt="chapel-img">
+                        <img src="<?php echo ale_get_option('2_chapel_img')?>" alt="chapel-img">
                     </div>
                 </div><!-- /.chapel-item -->
                 <div class="chapel-item">
                     <div class="chapel-img">
-                        <img src="<?php echo ale_get_option('3_img')?>" alt="chapel-img">
+                        <img src="<?php echo ale_get_option('3_chapel_img')?>" alt="chapel-img">
                     </div>
                 </div><!-- /.chapel-item -->
                 <div class="chapel-item">
                     <div class="chapel-img">
-                        <img src="<?php echo ale_get_option('1_img')?>" alt="chapel-img">
+                        <img src="<?php echo ale_get_option('4_chapel_img')?>" alt="chapel-img">
                     </div>
                 </div><!-- /.chapel-item -->
                 <div class="chapel-item">
                     <div class="chapel-img">
-                        <img src="<?php echo ale_get_option('2_img')?>" alt="chapel-img">
+                        <img src="<?php echo ale_get_option('5_chapel_img')?>" alt="chapel-img">
                     </div>
                 </div><!-- /.chapel-item -->
                 <div class="chapel-item">
                     <div class="chapel-img">
-                        <img src="<?php echo ale_get_option('3_img')?>" alt="chapel-img">
+                        <img src="<?php echo ale_get_option('6_chapel_img')?>" alt="chapel-img">
                     </div>
                 </div><!-- /.chapel-item -->
 

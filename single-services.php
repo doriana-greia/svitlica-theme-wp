@@ -20,180 +20,36 @@
                 </div><!-- /.row -->
                 <div class="row">
                     <div class="col-md-4 col-sm-4">
-                        <ul class="services-img">
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_1_service_img_1', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_1_service_img_2', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_1_service_img_3', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_1_service_img_4', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_1_service_img_5', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_1_service_img_6', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                        </ul>
+                        <div class="services-img">
+                            <?php
+                            if (get_post_meta($post->ID, 'gallery', true)) {
+                                $shortcode = get_post_meta($post->ID, 'gallery', true);
+                                echo do_shortcode("$shortcode");
+                            } else { echo ''; }
+                            ?>
+                        </div>
                         <h4> <?php echo get_post_meta($post->ID, 'service_titel_1', true); ?></h4>
                     </div>
                     <div class="col-md-4 col-sm-4">
-                        <ul class="services-img">
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_2_service_img_1', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_2_service_img_2', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_2_service_img_3', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_2_service_img_4', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_2_service_img_5', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_2_service_img_6', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                        </ul>
+                        <div class="services-img">
+                            <?php
+                            if (get_post_meta($post->ID, 'gallery-2', true)) {
+                                $shortcode = get_post_meta($post->ID, 'gallery-2', true);
+                                echo do_shortcode("$shortcode");
+                            } else { echo ''; }
+                            ?>
+                        </div>
                         <h4> <?php echo get_post_meta($post->ID, 'service_titel_2', true); ?></h4>
                     </div>
                     <div class="col-md-4 col-sm-4">
-                        <ul class="services-img">
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_3_service_img_1', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_3_service_img_2', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_3_service_img_3', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_3_service_img_4', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_3_service_img_5', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                            <li>
-                                <?php $image = get_post_meta($post->ID, 'slaider_3_service_img_6', true); ?>
-                                <?php if($image !== '') { ?>
-                                    <img src="http://localhost/svitlica/wp-content/themes/svitlica/img/service-info/<?php echo $image ?>" />
-                                <?php }
-                                else { ?>
-                                    <img src="http://placehold.it/290x213<?php echo $image ?>" alt="Изображение отсутствует"/>
-                                <?php } ?>
-                            </li>
-                        </ul>
+                        <div class="services-img">
+                            <?php
+                            if (get_post_meta($post->ID, 'gallery-3', true)) {
+                                $shortcode = get_post_meta($post->ID, 'gallery-3', true);
+                                echo do_shortcode("$shortcode");
+                            } else { echo ''; }
+                            ?>
+                        </div>
                         <h4> <?php echo get_post_meta($post->ID, 'service_titel_3', true); ?></h4>
                     </div>
                 </div><!-- /.row -->

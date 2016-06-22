@@ -25,11 +25,11 @@ function aletheme_get_options() {
         'attachment'=>'scroll'
     );
 
-	
+
 	$imagepath =  ALETHEME_URL . '/assets/images/';
-	
+
 	$options = array();
-		
+
 	$options[] = array("name" => "Theme",
 						"type" => "heading");
 
@@ -102,24 +102,141 @@ function aletheme_get_options() {
 
 
 
-    $options[] = array("name" => "Post Slider",
+    $options[] = array("name" => "Visitors-comment",
                         "type" => "heading");
 
-    $options[] = array( "name" => "Blog Slider slug 1",
+    $options[] = array( "name" => "Visitors-img 1",
                         "desc" => "Загрузіть зображення.",
-                        "id" => "ale_1_img",
+                        "id" => "ale_1_comment_img",
                         "std" => "",
                         "type" => "upload");
 
-    $options[] = array( "name" => "Blog Slider time 1",
+    $options[] = array( "name" => "Visitors-name 1",
+                        "desc" => "Імя",
+                        "id" => "ale_1_name",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-city 1",
+                        "desc" => "Місто",
+                        "id" => "ale_1_city",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-comment 1",
+                        "desc" => "Коментар",
+                        "id" => "ale_1_comment",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-img 2",
                         "desc" => "Загрузіть зображення.",
-                        "id" => "ale_2_img",
+                        "id" => "ale_2_comment_img",
                         "std" => "",
                         "type" => "upload");
 
-    $options[] = array( "name" => "Blog Slider time 1",
+    $options[] = array( "name" => "Visitors-name 2",
+                        "desc" => "Імя",
+                        "id" => "ale_2_name",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-city 2",
+                        "desc" => "Місто",
+                        "id" => "ale_2_city",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-comment 2",
+                        "desc" => "Коментар",
+                        "id" => "ale_2_comment",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-img 3",
                         "desc" => "Загрузіть зображення.",
-                        "id" => "ale_3_img",
+                        "id" => "ale_3_comment_img",
+                        "std" => "",
+                        "type" => "upload");
+
+    $options[] = array( "name" => "Visitors-name 3",
+                        "desc" => "Імя",
+                        "id" => "ale_3_name",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-city 3",
+                        "desc" => "Місто",
+                        "id" => "ale_3_city",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-comment 3",
+                        "desc" => "Коментар",
+                        "id" => "ale_3_comment",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-img 4",
+                        "desc" => "Загрузіть зображення.",
+                        "id" => "ale_4_comment_img",
+                        "std" => "",
+                        "type" => "upload");
+
+    $options[] = array( "name" => "Visitors-name 4",
+                        "desc" => "Введіть Імя",
+                        "id" => "ale_4_name",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-city 4",
+                        "desc" => "Вкажіть Місто",
+                        "id" => "ale_4_city",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Visitors-comment 4",
+                        "desc" => "Коментар",
+                        "id" => "ale_4_comment",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array("name" => "Chapel",
+                        "type" => "heading");
+
+    $options[] = array( "name" => "chapel-img 1",
+                        "desc" => "Загрузіть зображення.",
+                        "id" => "ale_1_chapel_img",
+                        "std" => "",
+                        "type" => "upload");
+
+    $options[] = array( "name" => "chapel-img 2",
+                        "desc" => "Загрузіть зображення.",
+                        "id" => "ale_2_chapel_img",
+                        "std" => "",
+                        "type" => "upload");
+
+    $options[] = array( "name" => "chapel-img 3",
+                        "desc" => "Загрузіть зображення.",
+                        "id" => "ale_3_chapel_img",
+                        "std" => "",
+                        "type" => "upload");
+
+    $options[] = array( "name" => "chapel-img 4",
+                        "desc" => "Загрузіть зображення.",
+                        "id" => "ale_4_chapel_img",
+                        "std" => "",
+                        "type" => "upload");
+
+    $options[] = array( "name" => "chapel-img 5",
+                        "desc" => "Загрузіть зображення.",
+                        "id" => "ale_5_chapel_img",
+                        "std" => "",
+                        "type" => "upload");
+
+    $options[] = array( "name" => "chapel-img 6",
+                        "desc" => "Загрузіть зображення.",
+                        "id" => "ale_6_chapel_img",
                         "std" => "",
                         "type" => "upload");
 
@@ -223,7 +340,7 @@ function aletheme_get_options() {
                         "type" => "text");
 
 
-	
+
 	$options[] = array( "name" => "Enable Open Graph",
 						"desc" => "The <a href=\"http://www.ogp.me/\">Open Graph</a> protocol enables any web page to become a rich object in a social graph.",
 						"id" => "ale_og_enabled",
@@ -231,17 +348,17 @@ function aletheme_get_options() {
 						"type" => "checkbox");
 
 
-	
+
 	$options[] = array( "name" => "Advanced Settings",
 						"type" => "heading");
 
-	
+
 	$options[] = array( "name" => "Google Analytics",
 						"desc" => "Please insert your Google Analytics code here. Example: <strong>UA-22231623-1</strong>",
 						"id" => "ale_ga",
 						"std" => "",
 						"type" => "text");
-	
+
 	$options[] = array( "name" => "Footer Code",
 						"desc" => "If you have anything else to add in the footer - please add it here.",
 						"id" => "ale_footer_info",
@@ -259,7 +376,7 @@ function aletheme_get_options() {
                         "id" => "ale_footermenutitle",
                         "std" => "Select a category",
                         "type" => "text");
-	
+
 	return $options;
 }
 
@@ -800,25 +917,6 @@ function aletheme_get_images_sizes() {
  */
 function aletheme_get_post_types() {
 	return array(
-        'gallery' => array(
-            'config' => array(
-                'public' => true,
-                'menu_position' => 20,
-                'has_archive'   => true,
-                'supports'=> array(
-                    'title',
-                    'editor',
-                    'thumbnail',
-
-                ),
-                'show_in_nav_menus'=> true,
-            ),
-            'singular' => 'Gallery',
-            'multiple' => 'Galleries',
-            'columns'    => array(
-                'first_image',
-            )
-        ),
         'services' => array(
             'config' => array(
                 'public' => true,
@@ -857,7 +955,6 @@ function aletheme_get_post_types() {
                 'first_image',
             )
         ),
-
     );
 }
 

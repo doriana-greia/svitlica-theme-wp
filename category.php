@@ -1,121 +1,91 @@
 <?php get_header(); ?>
-    <!-- Content -->
-    <div class="blog-center-align">
-
-        <!-- Blog Caption -->
-        <div class="blog-caption">
-            <div class="blogtitle"><?php echo single_cat_title("", false); ?></div>
+    <div class="main">
+        <div class="container-fluid wraper">
+            <div class="row">
+                <div class="breadcrumbs">
+                    <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+                </div>
+            </div><!-- /.row -->
         </div>
+        <section class="main-ewents">
+            <div class="container-fluid wraper">
+                <div class="row">
+                    <?php global $query_string; query_posts($query_string.'&posts_per_page=-1');?>
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <!-- Blog Line -->
-        <div class="blog-line"></div>
+                        <div class="ewents-box-wrap">
+                            <div class="ewents-box clearfix">
+                                <div class="col-md-4 col-sm-4 pl-0">
+                                    <div class="ewents-img">
+                                        <?php if(get_the_post_thumbnail($post->ID,'post-blogsize')){
+                                            echo get_the_post_thumbnail($post->ID,'post-blogsize');
+                                        }else{?>
+                                            <img src="http://placehold.it/299x291" alt="ewent-img">
+                                        <?php }?>
 
-        <!-- Filters Here -->
-        <ul class="blog-filter-line">
-            <li><?php _e('Filter By','aletheme'); ?>:</li>
-            <li>
-                <a class="filter-caption"><p><?php _e('Author','aletheme'); ?></p><span></span></a>
-                <ul>
+                                        <div class="data-ewents">
+                                            <div class="data-ewents-content">
+                                                <p class=""><?php echo get_post_meta($post->ID, 'data', true) ;?></p>
+                                                <p class=""><?php echo get_post_meta($post->ID, 'time', true) ;?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <div class="ewents-description">
+                                        <h4><a href="<?php the_permalink(); ?>" ><?php echo wp_trim_words( get_the_title(), 6 ); ?></a></h4>
+                                        <?php echo wp_trim_words( get_the_content(), 30 ); ?>
+                                    </div><!-- /.ewents-description -->
+                                    <div class="btn_grup">
+                                        <a href="#event_f" class="btn-red-light popap_c">
+                                            Зареєструватись
+                                        </a><!-- /.btn-red-light -->
 
-                    <?php
-                    $args = array(
-                        'orderby'       => 'name',
-                        'order'         => 'ASC',
-                        'number'        => null,
-                        'optioncount'   => false,
-                        'exclude_admin' => false,
-                        'show_fullname' => false,
-                        'hide_empty'    => true,
-                        'echo'          => true,
-                        'style'         => 'list',
-                        'html'          => true );
+                                        <a href="<?php the_permalink(); ?>" class="btn-grey">
+                                            Дізнатись більше
+                                        </a><!-- /.btn-gre -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.ewents-box-wrap -->
 
-                    wp_list_authors($args); ?>
-                </ul>
 
-            </li>
+                    <?php endwhile;  endif;  ?>
 
-            <li>
-                <a class="filter-caption"><p><?php _e('Category','aletheme'); ?></p><span></span></a>
-                <ul>
-                    <?php
-                    $args = array(
-                        'show_option_all'    => '',
-                        'orderby'            => 'name',
-                        'order'              => 'ASC',
-                        'style'              => 'list',
-                        'show_count'         => 0,
-                        'hide_empty'         => 1,
-                        'use_desc_for_title' => 1,
-                        'child_of'           => 0,
-                        'feed'               => '',
-                        'feed_type'          => '',
-                        'feed_image'         => '',
-                        'exclude'            => '',
-                        'exclude_tree'       => '',
-                        'include'            => '',
-                        'hierarchical'       => 1,
-                        'title_li'           => '',
-                        'show_option_none'   => __('No categories','aletheme'),
-                        'number'             => null,
-                        'echo'               => 1,
-                        'depth'              => 0,
-                        'current_category'   => 0,
-                        'pad_counts'         => 0,
-                        'taxonomy'           => 'category',
-                        'walker'             => null
-                    );
-                    wp_list_categories($args); ?>
-                </ul>
-            </li>
+                </div><!-- /.row -->
+            </div>
+        </section>
+    </div><!-- /.main -->
 
-            <li>
-                <a class="filter-caption"><p><?php _e('Tags','aletheme'); ?></p><span></span></a>
-                <?php
-                $tags = get_tags();
-                $html = '<ul>';
-                foreach ( $tags as $tag ) {
-                    $tag_link = get_tag_link( $tag->term_id );
 
-                    $html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-                    $html .= "{$tag->name}</a></li>";
-                }
-                $html .= '</ul>';
-                echo $html;
-                ?>
-            </li>
+    <div class="hidden">
+        <div class="event_f" id = "event_f" >
+            <form  action="mail.php" >
+                <label >
+                    <span>Кількість гостей</span>
+                    <input type="text" placeholder="50 дорослих" name="adults" required/>
+                </label>
+                <label >
+                    <span>П.І.П</span>
+                    <input type="text" placeholder="Байда Андрій Тарасович" name="last_name" required/>
+                </label>
 
-            <li class="search">
-                <form role="search" method="get" id="searchform" action="<?php echo site_url()?>" >
-                    <input type="search" class="searchinput" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php _e('SEARCH', 'aletheme')?>" />
-                    <button type="submit" id="searchsubmit"></button>
-                </form>
-            </li>
-        </ul>
-
-        <!-- Blog Content -->
-        <div class="blog-content">
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <?php ale_part('postpreview' );?>
-            <?php endwhile; else: ?>
-                <?php ale_part('notfound')?>
-            <?php endif; ?>
+                <label >
+                    <span>Телефон</span>
+                    <input type="text" placeholder="+38 (093) 00 00 0000" name="phone" required/>
+                </label>
+                <label >
+                    <span>E-MAIL</span>
+                    <input type="text" placeholder="youremail@mail.com" name="email" required/>
+                </label>
+                <label >
+                    <span class="textarea_c">Коментар</span>
+                    <textarea placeholder="Ваш Коментар" name="comment"></textarea>
+                </label>
+                <div class=" reqert_s">
+                    <input class="btn-red-light" type="submit" value="Бронювати">
+                </div>
+            </form>
         </div>
-
-        <!-- Blog Nav  -->
-        <div class="blog-nav">
-            <span class="left"><?php echo get_previous_posts_link(__('&lt; Newer Posts','aletheme')); ?></span>
-            <span class="right"><?php echo get_next_posts_link(__('Older Posts &gt;','aletheme')); ?></span>
-            <div class="center"><?php _e('page','aletheme'); ?> <?php echo $paged; ?> <?php _e('of','aletheme'); ?> <?php echo $wp_query->max_num_pages; ?></div>
-        </div>
-
-        <!-- Blog Nav -->
-        <div class="blog-line"></div>
-
-        <!-- Blog Footer  -->
-        <div class="blog-footer">
-            <?php ale_part('archives'); ?>
-        </div>
-
     </div>
 <?php get_footer(); ?>
